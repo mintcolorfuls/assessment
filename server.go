@@ -32,6 +32,7 @@ func initialTable(next echo.HandlerFunc) echo.HandlerFunc {
 		db, err := sql.Open("postgres", url)
 		if err != nil {
 			c.Error(err)
+			return err
 		}
 
 		defer db.Close()
@@ -40,6 +41,7 @@ func initialTable(next echo.HandlerFunc) echo.HandlerFunc {
 		_, err = db.Exec(query)
 		if err != nil {
 			c.Error(err)
+			return err
 		}
 
 		log.Println("Create table successful")
