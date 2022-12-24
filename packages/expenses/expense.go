@@ -1,4 +1,4 @@
-package expensesPackage
+package expensePackage
 
 type Expense struct {
 	Title  string
