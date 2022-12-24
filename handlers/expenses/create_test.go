@@ -1,7 +1,7 @@
-package expenseHandler
+package expenses
 
 import "testing"
 
-func TestCrea(t *testing.T) {
+func TestCreate(t *testing.T) {
 
 }

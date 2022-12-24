@@ -3,6 +3,8 @@ package main
 import (
 	"os"
 
+	"github.com/mintcolorfuls/assessment/handlers/expenses"
+
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -12,6 +14,8 @@ func main() {
 
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
+
+	e.POST("/expenses", expenses.Create)
 
 	e.Logger.Fatal(e.Start(os.Getenv("PORT")))
 }
