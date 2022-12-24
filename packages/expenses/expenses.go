@@ -1,1 +1,1 @@
-package expensesHandler
+package expensesPackage
