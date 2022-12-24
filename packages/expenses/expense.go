@@ -1,8 +1,9 @@
 package expenses
 
 type Expense struct {
-	Title  string
-	Amount int
-	Note   string
-	Tags   []string
+	Id     string   `json:"Id"`
+	Title  string   `json:"title"`
+	Amount int      `json:"amount"`
+	Note   string   `json:"note"`
+	Tags   []string `json:"tags"`
 }

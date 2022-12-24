@@ -16,10 +16,9 @@ import (
 func main() {
 	e := echo.New()
 
+	e.Use(initialTable)
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-
-	e.Use(initialTable)
 
 	e.POST("/expenses", expenses.Create)
 
@@ -45,6 +44,6 @@ func initialTable(next echo.HandlerFunc) echo.HandlerFunc {
 		}
 
 		log.Println("Create table successful")
-		return nil
+		return next(c)
 	}
 }
